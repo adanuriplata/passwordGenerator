@@ -42,6 +42,10 @@ function App() {
     setOptionsPass(optionsPass => { return {...optionsPass, lenghtOption: parseInt(e.target.value)}})
   }
 
+  const handleGeneratePass = () => {
+    setOptionsPass(optionsPass => { return {...optionsPass, passwordGenerated: GeneratePassword(optionsPass)}})
+  }
+
 
   return (
     <div className="App">
@@ -83,7 +87,7 @@ function App() {
         </div>
         <div className="container__button">
           <div>
-            <button onClick={() => GeneratePassword(optionsPass)}>Generar Contraseña</button>
+            <button onClick={() => handleGeneratePass()}>Generar Contraseña</button>
           </div>
         </div>
       </div>
