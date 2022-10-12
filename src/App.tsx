@@ -10,7 +10,9 @@ function App() {
     upperCaseOption: true,
     lowerCaseOption: true,
     numbersOption: true,
-    symbolsOption: true, 
+    symbolsOption: true,
+    securityLevel: 0,
+    passwordGenerated: '',
   }
 
   const [optionsPass, setOptionsPass] = useState<Password>(defaultOptions)
@@ -18,39 +20,42 @@ function App() {
 
   const handleOptionChangeUpperCase = (e: ChangeEvent<HTMLInputElement>) => {
     setOptionsPass((optionsPass) => { return {...optionsPass, upperCaseOption: e.target.checked}})
-    console.log(GeneratePassword(optionsPass));
-    console.log(e.target.checked)
+    
   }
 
   const handleOptionChangeLowerCase = (e: ChangeEvent<HTMLInputElement>) => {
     setOptionsPass((optionsPass) => { return {...optionsPass, lowerCaseOption: e.target.checked}})
-    console.log(GeneratePassword(optionsPass));
-    console.log(e.target.checked)
+    
   }
 
   const handleOptionChangeNumbers = (e: ChangeEvent<HTMLInputElement>) => {
     setOptionsPass((optionsPass) => { return {...optionsPass, numbersOption: e.target.checked}})
-    console.log(GeneratePassword(optionsPass));
-    console.log(e.target.checked)
+    
   }
 
   const handleOptionChangeUpperSymbols = (e: ChangeEvent<HTMLInputElement>) => {
     setOptionsPass((optionsPass) => { return {...optionsPass, symbolsOption: e.target.checked}})
-    console.log(GeneratePassword(optionsPass));
-    console.log(e.target.checked)
+    
   }
+
+  const handleOptionLenght = (e: ChangeEvent<HTMLInputElement>) => {
+    setOptionsPass(optionsPass => { return {...optionsPass, lenghtOption: parseInt(e.target.value)}})
+  }
+
 
   return (
     <div className="App">
       <div className='mainContainer'>
         <div className='title'><h1>Pasword Generator</h1></div>
         <div className='container__results'>
-          <input type="text" name='results' value='results' disabled  />
+          <input type="text" name='results' value={optionsPass.passwordGenerated} disabled  />
           <span className='copyPassword'>copiar pass</span>
         </div>
         <div className='container__lenght-characters'>
-          <h3>Longitud de caracteres</h3>
-          <div>barrita</div>
+          <h3>Longitud de caracteres</h3><p>{optionsPass.lenghtOption}</p>
+          <label htmlFor="bar">
+            <input name='bar' type="range" min="5" max="20" value={optionsPass.lenghtOption} onChange={e => handleOptionLenght(e) } />
+          </label>
         </div>
         <div className='container__options'>
           <label htmlFor="">
@@ -78,7 +83,7 @@ function App() {
         </div>
         <div className="container__button">
           <div>
-            <button>Generar Contraseña</button>
+            <button onClick={() => GeneratePassword(optionsPass)}>Generar Contraseña</button>
           </div>
         </div>
       </div>

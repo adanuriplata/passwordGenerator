@@ -6,5 +6,5 @@ import { Password } from "./types/password"
 
 
 export const GeneratePassword = ( paswordOptions:Password ) => {
-  return paswordOptions
+  return console.log(paswordOptions)
 }

@@ -3,5 +3,7 @@ export interface Password {
   upperCaseOption: boolean;
   lowerCaseOption: boolean;
   numbersOption: boolean;
-  symbolsOption: boolean; 
+  symbolsOption: boolean;
+  securityLevel: number;
+  passwordGenerated: string;
 }
