@@ -1,9 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { ChangeEvent, useState } from 'react'
 import './App.css'
+import { GeneratePassword } from './GeneratePassword'
+import { Password } from './types/password'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const defaultOptions: Password = {   
+    lenghtOption: 5,
+    upperCaseOption: true,
+    lowerCaseOption: true,
+    numbersOption: true,
+    symbolsOption: true, 
+  }
+
+  const [optionsPass, setOptionsPass] = useState<Password>(defaultOptions)
+
+
+  const handleOptionChangeUpperCase = (e: ChangeEvent<HTMLInputElement>) => {
+    setOptionsPass((optionsPass) => { return {...optionsPass, upperCaseOption: e.target.checked}})
+    console.log(GeneratePassword(optionsPass));
+    console.log(e.target.checked)
+  }
+
+  const handleOptionChangeLowerCase = (e: ChangeEvent<HTMLInputElement>) => {
+    setOptionsPass((optionsPass) => { return {...optionsPass, lowerCaseOption: e.target.checked}})
+    console.log(GeneratePassword(optionsPass));
+    console.log(e.target.checked)
+  }
+
+  const handleOptionChangeNumbers = (e: ChangeEvent<HTMLInputElement>) => {
+    setOptionsPass((optionsPass) => { return {...optionsPass, numbersOption: e.target.checked}})
+    console.log(GeneratePassword(optionsPass));
+    console.log(e.target.checked)
+  }
+
+  const handleOptionChangeUpperSymbols = (e: ChangeEvent<HTMLInputElement>) => {
+    setOptionsPass((optionsPass) => { return {...optionsPass, symbolsOption: e.target.checked}})
+    console.log(GeneratePassword(optionsPass));
+    console.log(e.target.checked)
+  }
 
   return (
     <div className="App">
@@ -19,19 +54,19 @@ function App() {
         </div>
         <div className='container__options'>
           <label htmlFor="">
-            <input type="checkbox" /> 
+            <input checked={optionsPass.upperCaseOption} type="checkbox" onChange={e => handleOptionChangeUpperCase(e)}/> 
             <span> Inlcuye letras mayusculas </span>  
           </label>
           <label htmlFor="">
-            <input type="checkbox" /> 
+            <input checked={optionsPass.lowerCaseOption} type="checkbox" onChange={e => handleOptionChangeLowerCase(e)}/> 
             <span> Inlcuye letras minusculas </span>  
           </label>
           <label htmlFor="">
-            <input type="checkbox" /> 
+            <input checked={optionsPass.numbersOption} type="checkbox" onChange={e => handleOptionChangeNumbers(e)}/> 
             <span> Inlcuye letras y numeros </span>  
           </label>
           <label htmlFor="">
-            <input type="checkbox" /> 
+            <input checked={optionsPass.symbolsOption} type="checkbox" onChange={e => handleOptionChangeUpperSymbols(e)}/> 
             <span> Inlcuye letras y simbolos </span>  
           </label>
         </div>
@@ -51,4 +86,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
