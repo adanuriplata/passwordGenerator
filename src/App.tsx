@@ -10,6 +10,7 @@ import {
   CheckboxOptions,
 } from "./components";
 import { defaultOptions } from "./DefaultOptions";
+import { Footer } from "./components/Footer";
 
 function App() {
   const [optionsPass, setOptionsPass] = useState<PasswordCode>(defaultOptions);
@@ -64,10 +65,11 @@ function App() {
 
   return (
     <div className="App">
+      <div className="title">
+        <h1>Password Generator</h1>
+      </div>
       <div className="mainContainer">
-        <div className="title">
-          <h1>Password Generator</h1>
-        </div>
+
 
         <ShowResults passwordGenerated={optionsPass.passwordGenerated} />
 
@@ -88,6 +90,7 @@ function App() {
 
         <GeneratePassButton handleGeneratePass={handleGeneratePass} blockButton={isBlockButton} />
       </div>
+      <Footer />
     </div>
   );
 }

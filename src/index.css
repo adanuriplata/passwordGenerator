@@ -247,3 +247,25 @@ input[type=range]:focus::-ms-fill-upper {
 ::placeholder{
   color: rgba(255, 255, 255, 0.35)
 }
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  padding-top: 20px;
+}
+.footer h3{
+  text-align: center;
+  font-size: 13px;
+  margin: 10px 0 0 0;
+}
+
+.footer p{
+  text-align: center;
+  font-size: 15px;
+  margin: 3px 0 3px 0;
+}
+
+.footer a{
+  color: white;
+  font-weight: 300;
+}

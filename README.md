@@ -70,8 +70,6 @@ This repo is for my personal website.
 
 - [![Vite][Vite]][Vite-url]
 - [![React][react.js]][react-url]
-- <a href='https://tailwindcss.com/'><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--X1_tTziN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://img.shields.io/badge/Tailwind_CSS-38B2AC%3Fstyle%3Dfor-the-badge%26logo%3Dtailwind-css%26logoColor%3Dwhite" loading="lazy" width="100" height="28"></a>
-- <a href='https://sass-lang.com/'><img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" loading="lazy" width="100" height="28"></a>
 - <a href='https://sass-lang.com/'><img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" loading="lazy" width="100" height="28"></a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
