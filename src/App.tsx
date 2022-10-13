@@ -1,7 +1,7 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import "./App.css";
 import { GeneratePassword } from "./GeneratePassword";
-import { Password } from "./types/password";
+import { PasswordCode } from "./types/PasswordCode";
 import {
   LenghtCharactesBar,
   SecurityLevel,
@@ -12,7 +12,7 @@ import {
 import { defaultOptions } from "./DefaultOptions";
 
 function App() {
-  const [optionsPass, setOptionsPass] = useState<Password>(defaultOptions);
+  const [optionsPass, setOptionsPass] = useState<PasswordCode>(defaultOptions);
   const [isBlockButton, setIsBlockButton] = useState(false)
 
   useEffect( () => {

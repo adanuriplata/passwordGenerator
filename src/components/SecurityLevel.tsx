@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from "react";
-import { Password } from "../types/password";
+import { PasswordCode } from "../types/PasswordCode";
 
 interface SecurityLevelProps {
-  password: Password;
+  password: PasswordCode;
 }
 
 export const SecurityLevel:FC<SecurityLevelProps> = ({password}) => {

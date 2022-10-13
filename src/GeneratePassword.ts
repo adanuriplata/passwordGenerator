@@ -1,8 +1,8 @@
-import { Password } from "./types/password"
+import { PasswordCode } from "./types/PasswordCode"
 
 
 
-export const GeneratePassword = ( passwordOptions:Password ) => {
+export const GeneratePassword = ( passwordOptions:PasswordCode ) => {
   const numbers = '1234567890'
   const lowerLetters = 'abcdefghijklmnopqrstuvwxyz'
   const upperLetters = lowerLetters.toUpperCase();

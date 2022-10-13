@@ -1,8 +1,8 @@
 import { ChangeEvent, FC } from "react";
-import { Password } from "../types/password";
+import { PasswordCode } from "../types/PasswordCode";
 
 interface CheckboxOptionsProps {
-  password: Password;
+  password: PasswordCode;
   handleOptionChangeUpperCase: (e: ChangeEvent<HTMLInputElement>) => void;
   handleOptionChangeLowerCase: (e: ChangeEvent<HTMLInputElement>) => void;
   handleOptionChangeNumbers: (e: ChangeEvent<HTMLInputElement>) => void;

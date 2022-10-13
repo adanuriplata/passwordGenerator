@@ -1,4 +1,4 @@
-export interface Password {
+export interface PasswordCode {
   lenghtOption: number;
   upperCaseOption: boolean;
   lowerCaseOption: boolean;

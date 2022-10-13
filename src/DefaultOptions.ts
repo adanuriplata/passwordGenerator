@@ -1,6 +1,6 @@
-import { Password } from "./types/password";
+import { PasswordCode } from "./types/PasswordCode";
 
-export const defaultOptions: Password = {
+export const defaultOptions: PasswordCode = {
   lenghtOption: 5,
   upperCaseOption: true,
   lowerCaseOption: true,
