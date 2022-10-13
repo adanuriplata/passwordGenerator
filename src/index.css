@@ -3,16 +3,11 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  background: #C33764;
+  background: -webkit-linear-gradient(to right, #1D2671, #C33764);
+  background: linear-gradient(to right, #1D2671, #C33764);
+  
+  color: white;
 }
 
 a {
@@ -32,51 +27,43 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 2em;
-  line-height: 1.1;
-  text-align: center;
-}
-
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid white;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s;
+  background-color: transparent;
+  color: white;
 }
 button:hover {
   border-color: #646cff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  color: rgba(256, 256, 256, 0.7);
+  /* transform: translateY(2px); */
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
 }
 
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-
 .mainContainer {
-  background-color: white;
-  color: #213547;
+  /* background-image: linear-gradient(-234deg, #6ae472 0%, #4bc253 100%); */
+  /* box-shadow: 0 0 51px rgb(75 194 83 / 74%); */
+  background-color: rgba(255,255,255,.05);
   border-radius: 20px;
   padding: 20px 40px;
   max-width: 400px;
   text-align: left;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.1;
+  text-align: center;
 }
 
 .mainContainer > div { 
@@ -100,7 +87,7 @@ button:focus-visible {
 .container__results input{
   background: none;
   border: none;
-  color: black;
+  color: white;
   font-size: 17px;
   letter-spacing: 2px;
 }
@@ -109,15 +96,16 @@ button:focus-visible {
   margin: 0 auto;
   max-width: 400px;
   border-radius: 5px;
-  border: solid 1px gray;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 5px 10px;
+  background: hsla(0,0%,100%,.15);
+  border: solid 2px transparent
 }
 
 .container__results .inputCopied{
-  border: solid 1px #00b248;
+  border-color: rgba(131,88,255,1);
 }
 
 .container__results span{
@@ -137,7 +125,126 @@ button:focus-visible {
   top: auto;
   opacity: 1;
   transform: translateY(-2em);
-  color: #00b248;
+  color: white;
   font-size: 18px;
-  font-weight: 700;
+}
+
+.container__lenght-characters div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: #aab2cd;
+}
+
+.container__lenght-characters div p{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+input[type=range] {
+  height: 34px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+  background-color: transparent
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 11px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: hsla(0,0%,100%,.15);
+  border-radius: 1px;
+  border: 0px solid #010101;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 26px;
+  width: 26px;
+  border-radius: 15px;
+  background: #fff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8px;
+}
+
+
+input[type=range]::-ms-fill-upper {
+  background: #74A9D8;
+  /* border: 0px solid #010101; */
+  border-radius: 2px;
+  /* box-shadow: 1px 1px 1px #000000; */
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  /* box-shadow: 1px 1px 1px #000031; */
+  /* border: 1px solid #00001E; */
+  height: 26px;
+  width: 26px;
+  border-radius: 15px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #74A9D8;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #74A9D8;
+}
+
+
+
+
+
+<!-- HTML !-->
+<button class="button-64" role="button"><span class="text">Button 64</span></button>
+
+/* CSS */
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
 }

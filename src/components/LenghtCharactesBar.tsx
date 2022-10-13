@@ -11,8 +11,10 @@ export const LenghtCharactesBar: FC<LenghtCharactesBarProps> = ({
 }) => {
   return (
     <div className="container__lenght-characters">
-      <h3>Longitud de caracteres</h3>
-      <p>{lenghtOption}</p>
+      <div>
+        <h3>Longitud de caracteres</h3>
+        <p>{lenghtOption}</p>
+      </div>
       <label htmlFor="bar">
         <input
           name="bar"
