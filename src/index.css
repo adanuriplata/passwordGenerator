@@ -50,6 +50,18 @@ button:focus-visible {
   outline: none;
 }
 
+button.blockButton{
+  opacity: .4;
+  cursor: not-allowed
+  /* style={{ opacity: blockButton ? .4 : 1, cursor: blockButton ? 'not-allowed' : 'pointer' }} */
+}
+
+button.blockButton:hover {
+  border-color: white;
+  box-shadow: none;
+  color: inherit;
+}
+
 .mainContainer {
   /* background-image: linear-gradient(-234deg, #6ae472 0%, #4bc253 100%); */
   /* box-shadow: 0 0 51px rgb(75 194 83 / 74%); */
@@ -73,12 +85,16 @@ h1 {
 .container__options {
   display: flex;
   flex-wrap: wrap;
+  font-size: 1.1em;
+  word-spacing: 2px;
 }
 
 .container__options label { 
   width: 100%;
   text-align: left;
+  cursor: pointer;
 }
+
 
 .container__button {
   text-align: center;
@@ -133,7 +149,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  color: #aab2cd;
+  color: rgba(256, 256, 256, 0.8)
 }
 
 .container__lenght-characters div p{
@@ -192,59 +208,41 @@ input[type=range]:focus::-ms-fill-upper {
   background: #74A9D8;
 }
 
-
-
-
-
-<!-- HTML !-->
-<button class="button-64" role="button"><span class="text">Button 64</span></button>
-
-/* CSS */
-.button-64 {
-  align-items: center;
-  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
-  border: 0;
-  border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-  box-sizing: border-box;
-  color: #FFFFFF;
+.container__levelSecurity > div{
   display: flex;
-  font-family: Phantomsans, sans-serif;
-  font-size: 20px;
-  justify-content: center;
-  line-height: 1em;
-  max-width: 100%;
-  min-width: 140px;
-  padding: 3px;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  cursor: pointer;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.button-64:active,
-.button-64:hover {
-  outline: 0;
+.levelBarContianer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
 }
 
-.button-64 span {
-  background-color: rgb(5, 6, 45);
-  padding: 16px 24px;
-  border-radius: 6px;
-  width: 100%;
-  height: 100%;
-  transition: 300ms;
+.levelBar {
+  width: 8px;
+  background-color: rgba(128, 128, 128, 0.758);
+  margin: 3px;
 }
 
-.button-64:hover span {
-  background: none;
+.levelBar1 {
+  height: 10px;
 }
 
-@media (min-width: 768px) {
-  .button-64 {
-    font-size: 24px;
-    min-width: 196px;
-  }
+.levelBar2 {
+  height: 20px;
+}
+
+.levelBar3 {
+  height: 30px;
+}
+
+.levelBarCheck {
+  background-color: #76ff03;
+}
+
+::placeholder{
+  color: rgba(255, 255, 255, 0.35)
 }

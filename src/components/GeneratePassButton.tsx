@@ -2,15 +2,17 @@ import { FC } from "react";
 
 interface GeneratePassButonProps {
   handleGeneratePass: () => void;
+  blockButton: boolean
 }
 
 export const GeneratePassButton: FC<GeneratePassButonProps> = ({
   handleGeneratePass,
+  blockButton
 }) => {
   return (
     <div className="container__button">
       <div>
-        <button onClick={() => handleGeneratePass()}>Generar Contraseña</button>
+        <button className={blockButton ? 'blockButton' : ''} disabled={blockButton} onClick={() => handleGeneratePass()}>Generar Contraseña</button>
       </div>
     </div>
   );

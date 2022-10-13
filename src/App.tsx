@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import "./App.css";
 import { GeneratePassword } from "./GeneratePassword";
 import { Password } from "./types/password";
@@ -13,6 +13,15 @@ import { defaultOptions } from "./DefaultOptions";
 
 function App() {
   const [optionsPass, setOptionsPass] = useState<Password>(defaultOptions);
+  const [isBlockButton, setIsBlockButton] = useState(false)
+
+  useEffect( () => {
+    if(!optionsPass.lowerCaseOption && !optionsPass.upperCaseOption && !optionsPass.symbolsOption && !optionsPass.numbersOption){
+      setIsBlockButton(true)
+    }else {
+      setIsBlockButton(false)
+    }
+  }, [optionsPass])
 
   const handleOptionChangeUpperCase = (e: ChangeEvent<HTMLInputElement>) => {
     setOptionsPass((optionsPass) => {
@@ -75,9 +84,9 @@ function App() {
           handleOptionChangeUpperSymbols={handleOptionChangeUpperSymbols}
         />
 
-        <SecurityLevel />
+        <SecurityLevel password={optionsPass}/>
 
-        <GeneratePassButton handleGeneratePass={handleGeneratePass} />
+        <GeneratePassButton handleGeneratePass={handleGeneratePass} blockButton={isBlockButton} />
       </div>
     </div>
   );

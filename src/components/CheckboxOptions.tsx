@@ -18,15 +18,16 @@ export const CheckboxOptions: FC<CheckboxOptionsProps> = ({
 }) => {
   return (
     <div className="container__options">
-      <label htmlFor="">
+      <label>
         <input
+          name="upperCase"
           checked={password.upperCaseOption}
           type="checkbox"
           onChange={(e) => handleOptionChangeUpperCase(e)}
         />
         <span> Inlcuye letras mayusculas </span>
       </label>
-      <label htmlFor="">
+      <label>
         <input
           checked={password.lowerCaseOption}
           type="checkbox"
@@ -34,21 +35,21 @@ export const CheckboxOptions: FC<CheckboxOptionsProps> = ({
         />
         <span> Inlcuye letras minusculas </span>
       </label>
-      <label htmlFor="">
+      <label>
         <input
           checked={password.numbersOption}
           type="checkbox"
           onChange={(e) => handleOptionChangeNumbers(e)}
         />
-        <span> Inlcuye letras y numeros </span>
+        <span> Inlcuye numeros </span>
       </label>
-      <label htmlFor="">
+      <label>
         <input
           checked={password.symbolsOption}
           type="checkbox"
           onChange={(e) => handleOptionChangeUpperSymbols(e)}
         />
-        <span> Inlcuye letras y simbolos </span>
+        <span> Inlcuye simbolos </span>
       </label>
     </div>
   );
