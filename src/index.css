@@ -96,3 +96,48 @@ button:focus-visible {
 .container__button {
   text-align: center;
 }
+
+.container__results input{
+  background: none;
+  border: none;
+  color: black;
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+.container__results .container__input{
+  margin: 0 auto;
+  max-width: 400px;
+  border-radius: 5px;
+  border: solid 1px gray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
+.container__results .inputCopied{
+  border: solid 1px #00b248;
+}
+
+.container__results span{
+  cursor: pointer;
+}
+
+.done {
+  position: absolute;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-1em);
+    color: #000;
+    transition: all .500s;
+}
+
+.copied .done {
+  top: auto;
+  opacity: 1;
+  transform: translateY(-2em);
+  color: #00b248;
+  font-size: 18px;
+  font-weight: 700;
+}
