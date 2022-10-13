@@ -25,10 +25,10 @@ export const GeneratePassword = ( passwordOptions:Password ) => {
   } 
 
   const finalPassword =  finalOptions(
-    passwordOptions.numbersOption && numbers, 
-    passwordOptions.lowerCaseOption && lowerLetters, 
-    passwordOptions.upperCaseOption && upperLetters,
-    passwordOptions.symbolsOption && symbols
+    passwordOptions.numbersOption ? numbers : '', 
+    passwordOptions.lowerCaseOption ? lowerLetters : '', 
+    passwordOptions.upperCaseOption ? upperLetters : '',
+    passwordOptions.symbolsOption ? symbols : ''
     ).slice(0, passwordOptions.lenghtOption).join('');
 
   return finalPassword

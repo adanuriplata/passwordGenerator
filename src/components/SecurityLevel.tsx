@@ -19,6 +19,10 @@ export const SecurityLevel:FC<SecurityLevelProps> = ({password}) => {
       setSecurityLevel({level1: false, level2: false, level3: false})
       return
     }
+    if(password.lenghtOption < 8) {
+      setSecurityLevel({level1: true, level2: false, level3: false})
+      return
+    }
     //3 security
     if(password.lenghtOption > 10 && password.lowerCaseOption && password.upperCaseOption && password.symbolsOption && password.numbersOption) {
       setSecurityLevel({level1: true, level2: true, level3: true})
@@ -44,39 +48,6 @@ export const SecurityLevel:FC<SecurityLevelProps> = ({password}) => {
       setSecurityLevel({level1: true, level2: false, level3: false})
       return
     }
-
-
-
-
-    // //1 security
-    // if(
-    //   (password.lenghtOption < 8) 
-    //   || 
-    //   ((password.lenghtOption < 8) && (password.upperCaseOption && password.numbersOption && password.symbolsOption && password.lowerCaseOption))
-    //   ||
-    //   ((password.lenghtOption < 8) && (password.upperCaseOption && password.numbersOption && password.symbolsOption && !password.lowerCaseOption))
-    //   ||
-    //   ((password.lenghtOption < 8) && (password.upperCaseOption && password.numbersOption && !password.symbolsOption && password.lowerCaseOption))
-    //   ) {
-    //   setSecurityLevel({level1: true, level2: false, level3: false})
-    //   return
-    // }
-    // //2 security
-    // if(
-    //   ((password.lenghtOption > 7 && password.lenghtOption < 11) && (password.upperCaseOption && password.numbersOption && password.symbolsOption && password.lowerCaseOption))
-    //   )
-    //   {
-    //   setSecurityLevel({level1: true, level2: true, level3: false})
-    //   return
-    // }
-
-    // if(
-    //   ((password.lenghtOption > 7) && (!password.lowerCaseOption || !password.upperCaseOption || !password.numbersOption || !password.symbolsOption))
-    //   )
-    //   {
-    //   setSecurityLevel({level1: true, level2: true, level3: false})
-    //   return
-    // }
 
   }, [password])
 

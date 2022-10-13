@@ -20,7 +20,7 @@ export const LenghtCharactesBar: FC<LenghtCharactesBarProps> = ({
           name="bar"
           type="range"
           min="5"
-          max="20"
+          max="17"
           value={lenghtOption}
           onChange={(e) => handleOptionLenght(e)}
         />
