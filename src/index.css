@@ -134,7 +134,6 @@ h1 {
     text-align: center;
     opacity: 0;
     transform: translateY(-1em);
-    color: #000;
     transition: all .500s;
 }
 
@@ -142,7 +141,6 @@ h1 {
   top: auto;
   opacity: 1;
   transform: translateY(-2em);
-  color: white;
   font-size: 18px;
 }
 
